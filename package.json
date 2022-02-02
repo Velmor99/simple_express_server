@@ -1,0 +1,27 @@
+{
+  "name": "simple_express_proj",
+  "version": "1.0.0",
+  "description": "server on nodejs, express, handlebars",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Velmor99/simple_express_server.git"
+  },
+  "author": "Roman Lee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Velmor99/simple_express_server/issues"
+  },
+  "homepage": "https://github.com/Velmor99/simple_express_server#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
