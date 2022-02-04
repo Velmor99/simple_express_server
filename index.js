@@ -17,6 +17,9 @@ server.set("views", "views");
 
 server.use(express.static(path.join(__dirname, "public")));
 
+//Необходимо что бы обрабатывать req.body в post запросах и получать объект
+server.use(express.urlencoded({ extended: true }));
+
 server.use("/", homeRoutes);
 server.use("/courses", coursesRoutes);
 server.use("/add", addRoutes);
