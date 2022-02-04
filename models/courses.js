@@ -27,17 +27,43 @@ class Courses {
   }
 
   toData() {
-    return ({
+    return {
       title: this.title,
       price: this.price,
       img: this.img,
       id: this.id,
-    });
+    };
   }
 
   async Save() {
     const courses = await Courses.getAll();
     courses.push(this.toData());
+    return new Promise((resolve, reject) => {
+      fs.writeFile(
+        path.join(__dirname, "..", "data", "data.json"),
+        JSON.stringify(courses),
+        (err) => {
+          if (err) {
+            reject(err);
+          } else {
+            resolve();
+          }
+        }
+      );
+    });
+  }
+
+  static async findById(id) {
+    const courses = await Courses.getAll();
+    const idx = courses.findIndex((e) => e.id === id);
+    return courses[idx];
+  }
+
+  static async changeCourse(course) {
+    const courses = await Courses.getAll();
+    const idx = courses.findIndex((e) => e.id === course.id);
+    console.log(idx)
+    courses[idx] = course;
     return new Promise((resolve, reject) => {
       fs.writeFile(
         path.join(__dirname, "..", "data", "data.json"),
