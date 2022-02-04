@@ -1,3 +1,18 @@
 .nav-wrapper {
     padding: 0 2rem;
 }
+
+.form-wrapper {
+    width: 60%;
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.add-title {
+    text-align: center;
+}
+
+.image {
+    object-fit: contain;
+}
