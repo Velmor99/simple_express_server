@@ -5,7 +5,7 @@ const exphbs = require("express-handlebars");
 const homeRoutes = require("./routes/home");
 const coursesRoutes = require("./routes/courses");
 const addRoutes = require("./routes/add");
-const cardRoutes = require("./routes/card");
+const cartRoutes = require("./routes/cart");
 const hbs = exphbs.create({
   defaultLayout: "main",
   extname: "hbs",
@@ -23,7 +23,7 @@ server.use(express.urlencoded({ extended: true }));
 server.use("/", homeRoutes);
 server.use("/courses", coursesRoutes);
 server.use("/add", addRoutes);
-server.use("/card", cardRoutes);
+server.use("/cart", cartRoutes);
 
 server.listen(3000, () => {
   console.log("Server has started");
